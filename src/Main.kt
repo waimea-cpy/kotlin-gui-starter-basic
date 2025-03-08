@@ -121,16 +121,20 @@ class MainWindow : JFrame(), ActionListener, KeyListener {
         }
     }
 
+    /**
+     * Handle characters typed
+     */
     override fun keyTyped(e: KeyEvent?) {
         println("Key TYPED: ${e?.keyChar}")
 
         if (e?.keyCode in KeyEvent.VK_A .. KeyEvent.VK_Z) {
             println("Letter key!")
         }
-        else {
-            e?.consume()
-        }    }
+    }
 
+    /**
+     * Handle key down events
+     */
     override fun keyPressed(e: KeyEvent?) {
         println("Key PRESSED: ${e?.keyCode}")
 
@@ -139,6 +143,9 @@ class MainWindow : JFrame(), ActionListener, KeyListener {
         }
     }
 
+    /**
+     * Handle key releases
+     */
     override fun keyReleased(e: KeyEvent?) {
         println("Key RELEASED: ${e?.keyCode}")
     }
